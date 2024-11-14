@@ -1,16 +1,8 @@
-from better_profanity import profanity
+from service import clear_text,check_profanity
 from flask import Flask, request, jsonify
 
 # Initialize Flask app
 app = Flask(__name__)
-
-# Function to check for profanity
-def check_profanity(text):
-    return profanity.contains_profanity(text)    
-
-# Function to clear the profanity text
-def clear_text(text):
-    return profanity.censor(text)
 
 # API endpoint 1
 @app.route('/api/v1/profanity-check', methods=['POST'])
